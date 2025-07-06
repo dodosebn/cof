@@ -1,9 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { FaAngleRight, FaWhatsapp } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'framer-motion';
-// ✅ Separated HeroTextSwitcher component
+
 const HeroTextSwitcher = ({ textOptions }: { textOptions: Array<string> }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -15,7 +14,7 @@ const HeroTextSwitcher = ({ textOptions }: { textOptions: Array<string> }) => {
   }, [textOptions.length]);
 
   return (
-    <div className="relative w-full text-[#FAA45B] font-extrabold text-[50px] md:text-[95px]
+    <div className="relative w-full text-[#FAA45B] font-extrabold text-[40px] md:text-[95px]
      leading-tight h-[80px] md:h-[120px] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
@@ -25,7 +24,6 @@ const HeroTextSwitcher = ({ textOptions }: { textOptions: Array<string> }) => {
           exit={{ y: -30, opacity: 0 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
           className="absolute w-full text-start mt-3 md:mt-0"
-
         >
           {textOptions[activeIndex]}
         </motion.div>
@@ -35,8 +33,8 @@ const HeroTextSwitcher = ({ textOptions }: { textOptions: Array<string> }) => {
 };
 
 const ImgShowComp = () => {
-  const imgers = ['/homeimg/img1.png', '/homeimg/img2.png'];
-const textOptions = ['Brighter Days', 'Safe Shelter', 'Lasting Love'];
+  const imgers = ['/homeimg/img1.png', '/homeimg/img3.jpg'];
+  const textOptions = ['Brighter Days', 'Safe Shelter', 'Lasting Love'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -55,13 +53,13 @@ const textOptions = ['Brighter Days', 'Safe Shelter', 'Lasting Love'];
   }, []);
 
   return (
-    <header>
-      <div className="relative h-screen w-screen overflow-x-hidden">
+    <section>
+      <div className="relative h-screen w-screen">
         {/* Background */}
         {imgers.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+            className={`absolute inset-0 transition-all duration-1000 object-cover ease-in-out ${
               index === currentIndex ? 'opacity-100 scale-100 animate-zoom-forward' : 'opacity-0 scale-110'
             }`}
             style={{
@@ -73,7 +71,7 @@ const textOptions = ['Brighter Days', 'Safe Shelter', 'Lasting Love'];
           />
         ))}
 
-        <div className="absolute inset-0 bg-red-700/70 z-10" />
+        <div className="absolute inset-0 bg-black/70 z-10" />
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto z-20 md:px-12 px-3 pt-20 md:pt-0 h-full flex flex-col justify-start text-left cursor-pointer text-white">
@@ -95,23 +93,23 @@ const textOptions = ['Brighter Days', 'Safe Shelter', 'Lasting Love'];
               ))}
             </ul>
 
-          <a
-  href="https://wa.me/14703903270"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex space-x-3 items-center"
->
-  <FaWhatsapp className="text-[#FAA45B]" size={35} />
-  <div>
-    <h1 className="text-[13px] font-bold">Whatsapp</h1>
-  </div>
-</a>
+            <a
+              href="https://wa.me/14703903270"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex space-x-3 items-center"
+            >
+              <FaWhatsapp className="text-green-700" size={35} />
+              <div>
+                <h1 className="text-[13px] font-bold">Whatsapp</h1>
+              </div>
+            </a>
           </nav>
 
           {/* Animated Heading & Text */}
-          <div className="flex flex-col items-start relative bottom-9 2xl:bottom-3 ">
-            <h1 className="md:text-[95px] text-[50px] font-extrabold capitalize relative top-5 md:top-0">
-Hope for Children
+          <div className="flex flex-col items-start relative bottom-9 2xl:bottom-3">
+            <h1 className="md:text-[95px] text-[40px] font-extrabold capitalize relative top-5 md:top-0">
+              Hope for Children
             </h1>
 
             <HeroTextSwitcher textOptions={textOptions} />
@@ -133,25 +131,23 @@ Hope for Children
                   </button>
                 </Link>
 
-            <a
-  href="https://wa.me/14703903270"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex space-x-3 items-center"
->
-  <FaWhatsapp className="text-[#FAA45B]" size={35} />
-  <div>
-    <h1 className="text-[13px] font-bold">Whatsapp</h1>
-  </div>
-</a>
-                
-      
+                <a
+                  href="https://wa.me/14703903270"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex space-x-3 items-center"
+                >
+                  <FaWhatsapp className="text-green-700" size={35} />
+                  <div>
+                    <h1 className="text-[13px] font-bold">Whatsapp</h1>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 };
 
