@@ -1,10 +1,9 @@
-'use client';
 import { useState } from 'react';
 import { RiMenu2Fill } from "react-icons/ri";
 // eslint-disable-next-line import/no-duplicates
 import { IoClose } from "react-icons/io5";
 import { CiLocationOn } from 'react-icons/ci';
-import { FaAngleRight, FaEnvelope, FaFacebook, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { FaAngleRight, FaEnvelope, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 // eslint-disable-next-line import/no-duplicates
 import { IoLogoTwitter } from 'react-icons/io5';
 import { LuPhoneCall } from 'react-icons/lu';
