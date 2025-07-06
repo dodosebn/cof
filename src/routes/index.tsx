@@ -9,7 +9,7 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <div className="text-center">
-      <header>
+      <header className='overflow-x-hidden'>
         <Header />
        <ImgShowComp />
       </header>
