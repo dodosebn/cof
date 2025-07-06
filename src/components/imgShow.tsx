@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { FaAngleRight, FaWhatsapp } from 'react-icons/fa';
-import { IoCallOutline } from 'react-icons/io5';
 import { AnimatePresence, motion } from 'framer-motion';
 // ✅ Separated HeroTextSwitcher component
 const HeroTextSwitcher = ({ textOptions }: { textOptions: Array<string> }) => {
