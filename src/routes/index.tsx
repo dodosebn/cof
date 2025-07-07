@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Header from '../components/header';
 import ImgShowComp from '../components/imgShow';
+import About from '@/components/about';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -9,9 +10,10 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <div className="text-center">
-      <header className='overflow-x-hidden'>
+      <header className='overflow-x-hidden h-screen'>
         <Header />
        <ImgShowComp />
+       <About />
       </header>
     </div>
   )

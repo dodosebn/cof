@@ -38,14 +38,6 @@ const ImgShowComp = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = originalStyle;
-    };
-  }, []);
-
-  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % imgers.length);
     }, 10000);
@@ -54,7 +46,7 @@ const ImgShowComp = () => {
 
   return (
     <section>
-      <div className="relative h-screen w-screen">
+      <div className="relative w-screen">
         {/* Background */}
         {imgers.map((img, index) => (
           <div
