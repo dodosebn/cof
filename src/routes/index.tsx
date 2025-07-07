@@ -2,6 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import Header from '../components/header';
 import ImgShowComp from '../components/imgShow';
 import About from '@/components/about';
+import Testimonaires from '@/components/testimonaires';
+import HelpInt from '@/components/helpInt';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -14,6 +16,8 @@ function App() {
         <Header />
        <ImgShowComp />
        <About />
+       <Testimonaires />
+       <HelpInt />
       </header>
     </div>
   )
