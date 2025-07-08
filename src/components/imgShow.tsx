@@ -111,7 +111,7 @@ const ImgShowComp = () => {
                 Bringing hope, healing, and long-term care to orphans and vulnerable communities across the world.
               </p>
               <div className="flex gap-7 pt-6 justify-start">
-                <Link to="/features">
+                <Link to="/donate">
                   <button className="bg-white gap-4 flex items-center text-[#B23E3E] font-bold px-4 py-3 rounded-sm transition-all duration-300 transform hover:scale-105 group">
                     <div className="relative h-6 overflow-hidden">
                       <div className="transition-transform duration-800 ease-in-out group-hover:-translate-y-6">

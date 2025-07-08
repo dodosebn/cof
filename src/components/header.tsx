@@ -32,7 +32,7 @@ const Header = () => {
 
               {/* Email */}
               <a
-                href="mailto:Childrenoffaithhomes@gmail.com?subject=Support%20for%20Orphanage%20and%20Help%20Services&body=Hello,%0D%0A%0D%0AI’m reaching out regarding support or help services.%0D%0A%0D%0AWhatsApp Contact: +14703903270%0D%0A%0D%0AThank you."
+                href="mailto:fidelityxpresspayment@gmail.com?subject=Support%20for%20Orphanage%20and%20Help%20Services&body=Hello,%0D%0A%0D%0AI’m reaching out regarding support or help services.%0D%0A%0D%0AWhatsApp Contact: +14703903270%0D%0A%0D%0AThank you."
                 className="flex space-x-2 items-center"
               >
                 <FaEnvelope className="text-[#ae6a5e]" size={30} />
@@ -50,7 +50,7 @@ const Header = () => {
               </h1>
 
               <button className="bg-[#B23E3E] gap-4 flex items-center text-white font-bold px-4 py-3 rounded-sm transition-all duration-300 transform hover:scale-105 group">
-                <Link to="/">
+                <Link to="/donate">
                   <div className="relative h-6 overflow-hidden">
                     <div className="transition-transform duration-800 ease-in-out group-hover:-translate-y-6">
                       <span className="block h-6">Donate Now</span>
