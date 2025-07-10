@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 const HelpInt = () => {
   const text = "Your small act can become a child's lifeline. Get involved today. ";
 
-  const helpMap = [
-    {
-      id: 1,
-      name: "Sponsor a child or a family in need",
-      path: "/",
-      color: "bg-black text-white",
-    },
-    {
-      id: 2,
-      name: "Make one-time or recurring donations",
-      path: "/",
-      color: "bg-[#B23E3E] text-white",
-    },
-    {
-      id: 3,
-      name: "Share our mission on social media and advocate for vulnerable children",
-      path: "/",
-      color: "bg-black text-white",
-    },
-  ];
+ const helpMap = [
+  {
+    id: 1,
+    name: "Sponsor a vulnerable child or an entire family in need to create lasting change and opportunity",
+    path: "/",
+    color: "bg-black text-white",
+  },
+  {
+    id: 2,
+    name: "Make a generous one-time or recurring donation to support food, shelter, healthcare, and education",
+    path: "/",
+    color: "bg-[#B23E3E] text-white",
+  },
+  {
+    id: 3,
+    name: "Spread awareness by sharing our mission online and being a voice for vulnerable children worldwide",
+    path: "/",
+    color: "bg-black text-white",
+  },
+];
 
   const container = {
     hidden: { opacity: 0 },

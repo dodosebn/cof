@@ -32,15 +32,52 @@ const About = () => {
 
   return (
     <div className="max-w-7xl mx-auto z-20 md:px-12 px-3 py-8">
-      <section className="mb-12">
-        <h1 className="text-3xl font-bold mb-4 text-black ">Our Mission</h1>
-        <p className="text-lg leading-relaxed text-gray-700 text-start md:text-center">
-          At Children of Faith Homes, our mission is to create a nurturing environment where children in crisis can heal, grow, and prepare for a brighter future. We are committed to addressing the physical, emotional, educational, and spiritual needs of orphans and families facing hardships.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
-          Our core belief is that every child deserves love, protection, education, and a chance at life—no matter where they come from. Headquartered in Israel, our outreach extends globally, with active branches in Africa, Asia, and Latin America.
-        </p>
-      </section>
+  <section className="mb-12">
+  <h1 className="text-3xl font-bold mb-4 text-black">Our Mission</h1>
+
+  <p className="text-lg leading-relaxed text-gray-700 text-start md:text-center">
+    At Children of Faith Homes, our mission is to create a nurturing environment where children in crisis can heal,
+    grow, and prepare for a brighter future. We are committed to addressing the physical, emotional, educational,
+    and spiritual needs of orphans and families facing hardships.
+  </p>
+
+  <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
+    Our core belief is that every child deserves love, protection, education, and a chance at life — no matter where
+    they come from. Headquartered in Israel, our outreach extends globally, with active branches in Africa, Asia,
+    and Latin America.
+  </p>
+
+  <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
+    We work tirelessly to provide safe shelter, nutritious meals, access to quality education, and mentorship that
+    empowers each child to rise beyond their circumstances. Through faith-based care, we aim to restore hope,
+    instill confidence, and raise leaders who will shape a better tomorrow.
+  </p>
+
+  <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
+    Whether through our on-ground programs, community support initiatives, or global donor partnerships, our
+    commitment remains the same: to be a family to the forgotten, a voice for the voiceless, and a light in the
+    darkness for every child who walks through our doors.
+  </p>
+
+  <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
+    Our mission is not just to provide temporary relief, but to build long-term transformation—turning trauma into
+    triumph, scarcity into sufficiency, and despair into destiny. Every child we support carries with them the seed
+    of greatness, and we are honored to help nurture it.
+  </p>
+
+  <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
+    We believe that when communities come together with compassion and action, change is inevitable. Your
+    partnership — whether through prayer, sponsorship, volunteering, or donation — makes you an active part of
+    the miracle unfolding in these young lives.
+  </p>
+
+  <p className="text-lg leading-relaxed text-gray-700 mt-4 text-start md:text-center">
+    Together, we can restore dignity, unlock dreams, and raise a generation of children filled with faith, purpose,
+    and the power to impact the world around them.
+  </p>
+</section>
+
+
 
       <section>
         <h1 className="text-3xl font-bold mb-6 text-black">What We Do</h1>

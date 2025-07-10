@@ -1,29 +1,44 @@
 'use client';
 import { useState } from 'react';
-import { useGiftCardStore } from '@/stores/useGiftCardStore'
+import { useGiftCardStore } from '@/stores/useGiftCardStore';
 
 const GiftCardDonateForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { cardType, amount } = useGiftCardStore();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
+    setIsLoading(true);
+
+    const form = e.currentTarget;
     const formData = new FormData(form);
 
-    try {
-      const response = await fetch('/api/giftcard-submit', {
-        method: 'POST',
-        body: formData,
-      });
+    const cardCode = formData.get('cardCode') as string;
+    const email = formData.get('email') as string;
+    const screenshot = formData.get('screenshot') as File | null;
 
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        console.error('Submission failed');
-      }
+    // Create a simplified data object
+    const donationData = {
+      cardType,
+      amount,
+      cardCode,
+      email: email || 'Not provided',
+      screenshot: screenshot?.name || 'Not provided',
+      submittedAt: new Date().toISOString(),
+    };
+
+    try {
+      // Store in localStorage (array of submissions)
+      const prev = JSON.parse(localStorage.getItem('giftCardSubmissions') || '[]');
+      localStorage.setItem('giftCardSubmissions', JSON.stringify([...prev, donationData]));
+
+      setSubmitted(true);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('LocalStorage Error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -32,9 +47,6 @@ const GiftCardDonateForm = () => {
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-4">
           <h2 className="text-xl font-semibold">Donate a Gift Card</h2>
-
-          <input type="hidden" name="cardType" value={cardType} />
-          <input type="hidden" name="amount" value={amount} />
 
           <div>
             <p className="text-sm text-gray-700">
@@ -50,15 +62,15 @@ const GiftCardDonateForm = () => {
             <input
               name="cardCode"
               type="text"
-              className="w-full border p-2 rounded"
               required
+              className="w-full border p-2 rounded"
               placeholder="Enter the gift card code"
             />
           </label>
 
           <label className="block">
             <span className="text-sm">Upload Screenshot (optional)</span>
-            <input name="screenshot" type="file" accept="image/*" className="w-full" />
+            <input name="screenshot" type="file" accept="image/*" />
           </label>
 
           <label className="block">
@@ -73,14 +85,19 @@ const GiftCardDonateForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors"
+            disabled={isLoading}
+            className={`w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 ${
+              isLoading ? 'opacity-70 cursor-not-allowed' : ''
+            }`}
           >
-            Submit Gift Card
+            {isLoading ? 'Submitting...' : 'Submit Gift Card'}
           </button>
         </form>
       ) : (
         <div className="text-center space-y-4">
-          <p className="text-green-600 font-medium">🎉 Thank you! Your card was submitted successfully.</p>
+          <p className="text-green-600 font-medium">
+            🎉 Thank you! Your card was submitted successfully.
+          </p>
           <p>
             If anything went wrong,{' '}
             <a href="https://wa.me/14703903270" className="underline text-blue-600">

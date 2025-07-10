@@ -18,7 +18,7 @@ const chariDona = [
 ];
 
   return (
-    <div className="text-center px-4 space-y-6 py-6">
+    <div className="text-center px-4 space-y-6 py-6 ">
       <h1 className="text-2xl md:text-4xl font-bold">
         CHARITABLE GIFTS THAT MAKE A DIFFERENCE
       </h1>
@@ -32,7 +32,7 @@ const chariDona = [
           <motion.section
             key={itm.name}
             whileHover={{ scale: 1.03 }}
-            className="h-[250px] bg-cover bg-center rounded-xl flex items-center justify-center shadow-md text-white text-xl font-semibold"
+            className="h-[250px] bg-cover bg-center flex items-center justify-center shadow-md text-white text-xl font-semibold"
             style={{ backgroundImage: `url(${itm.image})` }}
           >
             <Link to={itm.path} className="bg-black/60 px-4 py-2 rounded">

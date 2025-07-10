@@ -2,17 +2,22 @@
 
 import { motion } from 'framer-motion';
 import { useNavigate } from '@tanstack/react-router';
-// eslint-disable-next-line import/no-duplicates
-import { FaApple, FaGamepad, FaGift  } from "react-icons/fa";
-// eslint-disable-next-line import/no-duplicates
-import { FaAmazon } from "react-icons/fa";
-// eslint-disable-next-line import/no-duplicates
-import { FaRegCreditCard } from "react-icons/fa";
-
-
 import {
-  Sparkles,
-} from 'lucide-react';
+  FaAmazon,
+  FaApple,
+  FaWhatsapp,
+} from 'react-icons/fa';
+import {
+  SiEbay,
+  SiGoogleplay,
+  SiNetflix,
+  SiPlaystation,
+  SiRoblox,
+  SiSteam,
+  SiVisa,
+  SiWalmart,
+} from 'react-icons/si';
+import { Sparkles } from 'lucide-react';
 import { useGiftCardStore } from '@/stores/useGiftCardStore';
 
 const GiftCardOptions = () => {
@@ -20,10 +25,16 @@ const GiftCardOptions = () => {
   const setGiftCard = useGiftCardStore((state) => state.setGiftCard);
 
   const cardOptions = [
-    { type: 'Amazon', amounts: [10, 25, 50, 100] },
-    { type: 'iTunes', amounts: [15, 25, 50] },
-    { type: 'Google Play', amounts: [10, 20, 50, 100] },
+    { type: 'Amazon', amounts: [25, 50, 100, 200] },
+    { type: 'iTunes', amounts: [25, 50, 100] },
+    { type: 'Google Play', amounts: [10, 25, 50, 100] },
     { type: 'Steam', amounts: [20, 50, 100] },
+    { type: 'Visa', amounts: [50, 100, 200] },
+    { type: 'eBay', amounts: [25, 50, 100] },
+    { type: 'Walmart', amounts: [25, 50, 100] },
+    { type: 'Netflix', amounts: [30, 60, 100] },
+    { type: 'Roblox', amounts: [10, 25, 50] },
+    { type: 'PlayStation', amounts: [25, 50, 100] },
   ];
 
   const handleCardSelect = (type: string, amount: number) => {
@@ -38,25 +49,82 @@ const GiftCardOptions = () => {
       case 'iTunes':
         return <FaApple className="w-5 h-5" />;
       case 'Google Play':
-        return <FaGift  className="w-5 h-5" />;
+        return <SiGoogleplay className="w-5 h-5" />;
       case 'Steam':
-        return <FaGamepad className="w-5 h-5" />;
+        return <SiSteam className="w-5 h-5" />;
+      case 'Visa':
+        return <SiVisa className="w-5 h-5" />;
+      case 'eBay':
+        return <SiEbay className="w-5 h-5" />;
+      case 'Walmart':
+        return <SiWalmart className="w-5 h-5" />;
+      case 'Netflix':
+        return <SiNetflix className="w-5 h-5" />;
+      case 'Roblox':
+        return <SiRoblox className="w-5 h-5" />;
+      case 'PlayStation':
+        return <SiPlaystation className="w-5 h-5" />;
       default:
-        return <FaRegCreditCard className="w-5 h-5" />;
+        return <FaApple className="w-5 h-5" />;
     }
   };
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
-        We accept Gift Cards and Bank Transfers from anywhere in the world —
-        with banking support in the{' '}
-        <span className="text-black font-semibold">
-          UK, Canada, USA, Dominican Republic, and Africa
-        </span>
-        .
-      </h1>
+      {/* Main Intro */}
+      <div className="text-center mb-10">
+        <h1 className="text-2xl md:text-3xl font-bold mb-4">
+          We accept Gift Cards and Bank Transfers globally
+        </h1>
+        <p className="text-base md:text-lg font-medium">
+          With banking support in the{' '}
+          <span className="text-black font-semibold">
+            UK, Canada, USA, Dominican Republic, and Africa
+          </span>
+          .
+        </p>
+      </div>
 
+      {/* Donation Heading */}
+      <div className="text-center mb-8">
+      <h2
+  className="text-xl md:text-2xl font-semibold 
+  flex items-center justify-center gap-2 
+  text-transparent bg-clip-text 
+  bg-gradient-to-r from-[#B23E3E] to-[#FF8080]"
+>
+  You can also make a donation using any of the Gift Card options below
+  <span className="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+    Donate Now
+  </span>
+</h2>
+
+        <p className="text-sm text-gray-600 mt-1">
+          Simply select a card and choose your amount to proceed.
+        </p>
+      </div>
+
+      {/* WhatsApp CTA */}
+      <div className="mb-10 text-center">
+        <p className="text-base md:text-lg font-medium mb-2">
+          To receive account details or start your transaction, kindly reach out to us directly via WhatsApp:
+        </p>
+        <div className="flex justify-center">
+          <a
+            href="https://wa.me/14703903270"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-green-100 hover:bg-green-200 px-4 py-2 rounded-md shadow transition"
+          >
+            <FaWhatsapp className="text-green-700" size={28} />
+            <span className="font-bold text-green-900 text-sm md:text-base">
+              Chat on WhatsApp
+            </span>
+          </a>
+        </div>
+      </div>
+
+      {/* Card Options Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {cardOptions.map((card) => (
           <motion.div
@@ -77,7 +145,7 @@ const GiftCardOptions = () => {
               </span>
             </div>
 
-            {/* Body */}
+            {/* Amount Buttons */}
             <div className="p-4 space-y-2 bg-white/60 backdrop-blur-sm">
               {card.amounts.map((amount) => (
                 <motion.button
