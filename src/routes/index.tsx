@@ -4,6 +4,7 @@ import ImgShowComp from '../components/imgShow';
 import About from '@/components/about';
 import Testimonaires from '@/components/testimonaires';
 import HelpInt from '@/components/helpInt';
+import Footer from '@/components/footer';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -18,6 +19,8 @@ function App() {
        <About />
        <Testimonaires />
        <HelpInt />
+             <Footer />
+
       </header>
     </div>
   )

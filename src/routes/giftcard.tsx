@@ -1,11 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
 import GiftCardDonateForm from '@/components/donations/giftcardDonationForm';
+import Cheader from '@/components/cHeader';
 
 export const Route = createFileRoute('/giftcard')({
   validateSearch: z.object({
-    type: z.string().optional(),     // allow route to load without query
-    amount: z.coerce.number().optional(), // coerce string to number
+    type: z.string().optional(),     
+    amount: z.coerce.number().optional(),
   }),
 
   component: RouteComponent,
@@ -13,7 +14,8 @@ export const Route = createFileRoute('/giftcard')({
 
 function RouteComponent() {
   return (
-    <div className="py-8">
+ <div className='overflow-x-hidden h-screen'>
+            <Cheader />
       <GiftCardDonateForm />
     </div>
   );

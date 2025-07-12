@@ -36,17 +36,11 @@ const Header = () => {
           <div className="flex justify-between">
             <div className="flex flex-row space-x-5 items-stretch">
               {/* Location */}
-              <div className="flex space-x-2 items-center">
-                <CiLocationOn className="text-[#f19383]" size={35} />
-                <div>
-                  <h1 className="text-[#002C5F] text-[15px] font-bold">Israel HQ</h1>
-                  <p className="text-[#002C5FCC] text-[13px]">Visit Our site</p>
-                </div>
-              </div>
+             <Link to='/' className='text-3xl'>Home</Link>
 
               {/* Divider */}
               <div className="relative mx-4">
-                <div className="absolute top-0 bottom-0 h-[20rem] left-1/2 w-[0.5px] bg-gray-400/40 transform -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-0 bottom-0 h-[9rem] left-1/2 w-[0.5px] bg-gray-400/40 transform -translate-x-1/2 -translate-y-1/2" />
               </div>
 
               {/* Email */}
@@ -144,7 +138,7 @@ const Header = () => {
 
                 {/* Navigation Links */}
                 <motion.ul
-                  className="flex flex-col text-sm font-medium divide-y divide-gray-100 mb-6"
+                  className="flex flex-col items-center text-sm font-medium divide-y divide-gray-100 mb-6"
                   variants={containerVariant}
                   initial="hidden"
                   animate="visible"
